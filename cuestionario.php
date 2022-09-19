@@ -44,63 +44,89 @@ if ($puntos >= 2 ) {
     <title> Resultado cuestionario</title>
 </head>
 
-<body class="text-center p-4">
-    <h2 class="text-center" > Resultado cuestionario </h2>
+<body class="p-4">
+    <h2 class="text-center"> Resultado cuestionario </h2>
 
     <?php
     $preg = $_POST['pre'];
     $preg2 = $_POST['P2'];
     $preg3 = $_POST['P3'];
-    $preg3 = $_POST['P4'];
+    $preg4 = $_POST['P4'];
+    $preg5 = $_POST['P5'];
 
     $mensaje = "";
     $puntos = 0;
 
     if ($preg == "40") {
         $puntos = $puntos + 3;
-        $mensaje = "<br> Respuesta 1 correcta <br>";
+        $mensaje = "<br> Respuesta 1 correcta <br> 1. La velocidad permitida es de 40 km/h <br>";
         echo $mensaje;
     } else {
-        $mensaje = "<br>Respuesta 1 Incorrecta <br>";
+        $mensaje = "<br>Respuesta 1 Incorrecta <br> 1. La velocidad permitida es de 40 km/h <br>";
         echo $mensaje;
     }
+    echo "<br>";
     if ($preg2 == "Al humano") {
         $puntos = $puntos + 3;
-        $mensaje = " Respuesta 2 correcta <br>";
+        $mensaje = " Respuesta 2 correcta <br> 2. Se deben a los factores humanos en su mayoria <br> ";
         echo $mensaje;
     } else {
-        $mensaje = " Respuesta 2 incorrecta <br>";
+        $mensaje = " Respuesta 2 incorrecta <br> 2. Se deben a los factores humanos en su mayoria <br> ";
         echo $mensaje;
     }
+    echo "<br>";
     if ($preg3 == "Humano, Vehicular y Ambiental.") {
         $puntos = $puntos + 3;
-        $mensaje = " Respuesta 3 Correcta <br>";
+        $mensaje = " Respuesta 3 Correcta <br> C. Humano, Vehicular y Ambiental. <br/>";
         echo $mensaje;
     } else {
-        $mensaje = " Respuesta 3 Incorrecta <br>"; 
+        $mensaje = " Respuesta 3 Incorrecta <br> C. Humano, Vehicular y Ambiental. <br/>";
         echo $mensaje;
     }
-    if ($puntos >= 3) {
-        $mensaje = "Aprobaste maestro :)";
+    echo "<br>";
+    if ($preg4 == "Verdadero") {
+        $puntos = $puntos + 3;
+        $mensaje = " Respuesta 4 Correcta <br> Verdadero <br>";
+        echo $mensaje;
     } else {
-        $mensaje = " suerte la proxima rey";
+        $mensaje = " Respuesta 4 Incorrecta <br> Verdadero <br>";
+        echo $mensaje;
+    }
+    echo "<br>";
+    if ($preg5 == "A") {
+        $puntos = $puntos + 3;
+        $mensaje = " Respuesta 5 Correcta <br> A. Hecho que puede ser evitado, en el cual se produce daño a persona o cosa, en ocasión de
+        circulación en la vía pública. <br>";
+        echo $mensaje;
+    } else {
+        $mensaje = " Respuesta 5 Incorrecta <br> A. Hecho que puede ser evitado, en el cual se produce daño a persona o cosa, en ocasión de
+        circulación en la vía pública. <br>";
+        echo $mensaje;
     }
 
 
+    #-------------------- PUNTAJE ---------------------
 
 
+    if ($puntos <= 15) {
+        $mensaje = "<br>Lamentablemente desaprobaste ";
+        
+    } else {
+        $mensaje = "<br> Bien, aprobaste !!";
+        
+    }
 
-    echo "<br>Resultado: $puntos 
-    <p> --------------------------------- </p> 
-    $mensaje ";
-    // echo "<br>Respuestas:<br> 1. La velocidad permitida es de 40 km/h <br> 
-    // 2. Se deben a los factores humanos en su mayoria <br> 
-    // 3. C. Humano, Vehicular y Ambiental.";
+    echo $mensaje;
+    echo "<br> Resultado: ". $puntos ; 
 
+    
     ?>
 
     <br><br>
-    <a href="cuestionario.html" class="btn btn-primary"> Volver a intentarlo </a>
+    <div class="text-center">
+        <a href="cuestionario.html" class="btn btn-primary"> Volver a intentarlo </a>
+    </div>
+
 
 </body>
 
