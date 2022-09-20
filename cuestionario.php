@@ -1,35 +1,3 @@
-<!--
-
-// $preg = $_POST['pre'];
-//  $preg2 = $_POST['P2'];
-
-// foreach($preg2 as $rta){
-// echo 'Respuesta: '.$rta. "<br>";
-// } 
-
-$mensaje = "";
-
-$puntos = 0;
-
-if($preg == "40") {
-    $puntos = $puntos + 3;
-}
-
-if($preg2 == "Al humano") {
-    $puntos = $puntos + 3;
-}
-
-if ($puntos >= 2 ) {
-    $mensaje = " <br>Aprobaste maestro :) <br>";
-} else {
-    $mensaje = " suerte la proxima rey";
-}
-
- echo "<br>Resultado: $puntos <br> $mensaje <br>";
- echo "Respuestas: <br> 1. La velocidad permitida es de 40 km/h <br> 2. Se deben a los factores humanos en su mayoria";
-
-?> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,8 +12,8 @@ if ($puntos >= 2 ) {
     <title> Resultado cuestionario</title>
 </head>
 
-<body class="p-4">
-    <h2 class="text-center"> Resultado cuestionario </h2>
+<body style="background-color: antiquewhite;" class="p-4">
+    <h2 class="text-center style="color: yellow;> Resultado cuestionario </h2>
 
     <?php
     $preg = $_POST['pre'];
@@ -59,47 +27,51 @@ if ($puntos >= 2 ) {
 
     if ($preg == "40") {
         $puntos = $puntos + 3;
-        $mensaje = "<br> Respuesta 1 correcta <br> 1. La velocidad permitida es de 40 km/h <br>";
+        $mensaje = "<br> 1. ¿Cual es la velocidad maxima permitida en zona urbana?<br>Respuesta Correcta. La velocidad permitida es de 40 km/h <br>";
         echo $mensaje;
     } else {
-        $mensaje = "<br>Respuesta 1 Incorrecta <br> 1. La velocidad permitida es de 40 km/h <br>";
+        $mensaje = "<br> 1. ¿Cual es la velocidad maxima permitida en zona urbana?<br>Respuesta Incorrecta. La velocidad permitida es de 40 km/h <br>";
         echo $mensaje;
     }
     echo "<br>";
     if ($preg2 == "Al humano") {
         $puntos = $puntos + 3;
-        $mensaje = " Respuesta 2 correcta <br> 2. Se deben a los factores humanos en su mayoria <br> ";
+        $mensaje = "<br> 2. ¿A qué factor se deben la mayoría de los siniestros viales? <br>Respuesta Correcta, se deben a los factores humanos en su mayoria <br> ";
         echo $mensaje;
     } else {
-        $mensaje = " Respuesta 2 incorrecta <br> 2. Se deben a los factores humanos en su mayoria <br> ";
+        $mensaje = "<br> 2. ¿A qué factor se deben la mayoría de los siniestros viales? <br>Respuesta Incorrecta, se deben a los factores humanos en su mayoria <br> ";
         echo $mensaje;
     }
     echo "<br>";
     if ($preg3 == "Humano, Vehicular y Ambiental.") {
         $puntos = $puntos + 3;
-        $mensaje = " Respuesta 3 Correcta <br> C. Humano, Vehicular y Ambiental. <br/>";
+        $mensaje = "<br>3. ¿La Organización Mundial de la Salud manifiesta que el riesgo en la vía pública surge como resultado de diversos factores, ¿cuáles son?
+        <br>Respuesta Correcta, Humano, Vehicular y Ambiental. <br/>";
         echo $mensaje;
     } else {
-        $mensaje = " Respuesta 3 Incorrecta <br> C. Humano, Vehicular y Ambiental. <br/>";
+        $mensaje = "<br>3. ¿La Organización Mundial de la Salud manifiesta que el riesgo en la vía pública surge como resultado de diversos factores, ¿cuáles son?
+        <br>Respuesta Incorrecta, Humano, Vehicular y Ambiental. <br/>";
         echo $mensaje;
     }
     echo "<br>";
     if ($preg4 == "Verdadero") {
         $puntos = $puntos + 3;
-        $mensaje = " Respuesta 4 Correcta <br> Verdadero <br>";
+        $mensaje = "4. Por lo general, las fallas mecánicas se deben a conductas negligentes por parte de los propietarios
+        de los vehículos, que no se ocupan de la verificación del estado de su automóvil <br>Respuesta Correcta, es verdadero <br>";
         echo $mensaje;
     } else {
-        $mensaje = " Respuesta 4 Incorrecta <br> Verdadero <br>";
+        $mensaje = "4. Por lo general, las fallas mecánicas se deben a conductas negligentes por parte de los propietarios
+        de los vehículos, que no se ocupan de la verificación del estado de su automóvil <br>Respuesta Incorrecta, es verdadero <br>";
         echo $mensaje;
     }
     echo "<br>";
     if ($preg5 == "A") {
         $puntos = $puntos + 3;
-        $mensaje = " Respuesta 5 Correcta <br> A. Hecho que puede ser evitado, en el cual se produce daño a persona o cosa, en ocasión de
+        $mensaje = "¿A qué se denomina incidente de tránsito o incidente vial? <br>Respuesta Correcta, Hecho que puede ser evitado, en el cual se produce daño a persona o cosa, en ocasión de
         circulación en la vía pública. <br>";
         echo $mensaje;
     } else {
-        $mensaje = " Respuesta 5 Incorrecta <br> A. Hecho que puede ser evitado, en el cual se produce daño a persona o cosa, en ocasión de
+        $mensaje = "¿A qué se denomina incidente de tránsito o incidente vial? <br> Respuesta Incorrecta, Hecho que puede ser evitado, en el cual se produce daño a persona o cosa, en ocasión de
         circulación en la vía pública. <br>";
         echo $mensaje;
     }
@@ -108,7 +80,7 @@ if ($puntos >= 2 ) {
     #-------------------- PUNTAJE ---------------------
 
 
-    if ($puntos <= 15) {
+    if ($puntos < 15) {
         $mensaje = "<br>Lamentablemente desaprobaste ";
         
     } else {
